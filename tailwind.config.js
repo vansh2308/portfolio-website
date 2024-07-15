@@ -15,6 +15,15 @@ export default {
       },
       backgroundImage: {
         lines: "url(/src/assets/lines.png)"
+      },
+      keyframes: {
+        gradient: {
+          "0%": {backgroundPosition: "0% 50%"},
+          "100%": {backgroundPosition: "100% 50%"}
+        }
+      },
+      animation: {
+        gradient: "gradient 3s linear infinite"
       }
     },
   },

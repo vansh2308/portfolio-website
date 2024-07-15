@@ -78,7 +78,7 @@ export default function Hero() {
                 style={{ transform: `translate(${welcomeHeight}px)` }}
             />
 
-            <div className="flex flex-col overflow-x-visible w-full  h-fit relative mt-32">
+            <div className="flex flex-col overflow-x-visible w-full items-center h-fit relative mt-32">
                 <Hline />
                 <div className="w-full flex justify-center items-center gap-5 py-7" ref={welcomeRef}>
                     <div className="w-[10rem] h-[1.5px] bg-gradient-to-r from-transparent to-sky/50 " />
@@ -86,7 +86,7 @@ export default function Hero() {
                     <div className="w-[10rem] h-[1.5px] bg-gradient-to-l from-transparent to-sky/50 " />
                 </div>
                 <Hline />
-                <div className="text-[5.5rem] font-bold text-center py-5" ref={nameRef}>
+                <div className="text-[5.5rem] text-transparent font-bold text-center w-fit py-5 gradient-text animate-gradient" ref={nameRef}>
                     Vansh's
                 </div>
                 <Hline />
