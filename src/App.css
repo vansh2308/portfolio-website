@@ -33,3 +33,10 @@ body{
   );
   @apply absolute h-[350%] w-[350%] -left-[125%] -top-[125%] content-[''] animate-borderSpin 
 }
+
+
+.tech-stack-grid{
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+}
