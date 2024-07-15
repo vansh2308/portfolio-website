@@ -30,12 +30,16 @@ export default {
           "0%": {transform: "rotate(48deg)"},
           "50%": {transform: "rotate(42deg)"},
           "100%": {transform: "rotate(48deg)"},
+        },
+        borderSpin: {
+          "100%": {transform: "rotate(-360deg)"}
         }
       },
       animation: {
         gradient: "gradient 3s linear infinite",
         splotlightLeft: "spotlightLeft 5s linear infinite",
-        splotlightRight: "spotlightRight 7s linear infinite"
+        splotlightRight: "spotlightRight 7s linear infinite",
+        borderSpin: "borderSpin 7s linear infinite" 
       }
     },
   },

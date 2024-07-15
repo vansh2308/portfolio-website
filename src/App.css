@@ -24,3 +24,12 @@ body{
   background-size: 300% 300% !important;
   /* width: fit-content; */
 }
+
+.button-wrapper::before{
+  background: conic-gradient(
+    #A8D2FE 0deg,
+    #69adf5 0deg,
+    transparent 40deg
+  );
+  @apply absolute h-[350%] w-[350%] -left-[125%] -top-[125%] content-[''] animate-borderSpin 
+}
