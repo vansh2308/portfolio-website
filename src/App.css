@@ -18,7 +18,7 @@ body{
 
 .gradient-text{
   /* background-color: red ; */
-  background: linear-gradient(to right, #B1CAEC, #5B6783, rgb(49, 61, 70), #5B6783, #B1CAEC, #5B6783, rgb(49, 61, 70));
+  background: linear-gradient(to right, #B1CAEC, #5B6783, #B1CAEC, #5B6783, #B1CAEC, #5B6783, #B1CAEC);
   color: transparent;
   background-clip: text !important;
   background-size: 300% 300% !important;

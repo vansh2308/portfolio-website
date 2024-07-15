@@ -25,6 +25,11 @@ export default function Hero() {
 
     return (
         <div className="w-[85%] h-screen min-h-fit relative">
+            <div className="spotlight w-40 h-[45rem] z-20 bg-gradient-to-b from-transparent to-lgrey/20 absolute blur-3xl -rotate-45 -top-[10%] origin-top -left-[10%] animate-splotlightLeft" />
+            <div className="spotlight w-40 h-[40rem] z-30 bg-gradient-to-b from-transparent to-lgrey/20 absolute blur-3xl rotate-45 -top-[15%] origin-top right-[0%] animate-splotlightRight" />
+
+
+
             <nav className="flex justify-between items-center mt-10">
                 <img src={logo} alt="logo" className="w-10" />
                 <button className="bg-lgrey/20 border text-xs font-extralight border-lgrey rounded-full px-7 py-2">

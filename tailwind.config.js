@@ -20,10 +20,22 @@ export default {
         gradient: {
           "0%": {backgroundPosition: "0% 50%"},
           "100%": {backgroundPosition: "100% 50%"}
+        },
+        spotlightLeft: {
+          "0%": {transform: "rotate(-50deg)"},
+          "50%": {transform: "rotate(-40deg)"},
+          "100%": {transform: "rotate(-50deg)"},
+        },
+        spotlightRight: {
+          "0%": {transform: "rotate(48deg)"},
+          "50%": {transform: "rotate(42deg)"},
+          "100%": {transform: "rotate(48deg)"},
         }
       },
       animation: {
-        gradient: "gradient 3s linear infinite"
+        gradient: "gradient 3s linear infinite",
+        splotlightLeft: "spotlightLeft 5s linear infinite",
+        splotlightRight: "spotlightRight 7s linear infinite"
       }
     },
   },
