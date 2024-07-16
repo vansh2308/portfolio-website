@@ -12,6 +12,7 @@
 }
 
 body{
+  overflow-x: hidden;
   @apply bg-black;
   @apply text-sky
 }
