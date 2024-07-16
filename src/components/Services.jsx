@@ -36,7 +36,7 @@ export default function Services() {
                 {
                     servicesList.map((item, key) => {
                         return (
-                            <div className="w-full text-[0.7rem] font-thin text-center">
+                            <div className="w-full text-[0.7rem] font-thin text-center" key={key}>
                                 {item ? item : ""}
                             </div>
                         )

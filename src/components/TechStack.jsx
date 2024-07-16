@@ -98,7 +98,7 @@ export default function TechStack() {
                 {
                     techstack.map((item, key) => {
                         return(
-                            <div className="w-full aspect-square bg-gradient-to-bl from-[#272d3c] to-dgrey rounded-md border-[0.5px] border-lgrey flex items-center justify-center text-[1.9rem]">
+                            <div className="w-full aspect-square bg-gradient-to-bl from-[#272d3c] to-dgrey rounded-md border-[0.5px] border-lgrey flex items-center justify-center text-[1.9rem]" key={key}>
                                 {item.logo}
                             </div>
                         )
