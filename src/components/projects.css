@@ -5,6 +5,7 @@
 }
 
 .bilateral-container {
+    margin-top: 5rem;
     position: relative;
     left: 50%;
     transform: translate(-50%, 0);
@@ -28,12 +29,8 @@
     border-radius: 7px;
     height: 400px;
     width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-shrink: 0;
-    padding: 0 2vw;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 .project-container:last-child{
