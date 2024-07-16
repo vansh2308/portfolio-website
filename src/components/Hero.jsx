@@ -34,7 +34,7 @@ export default function Hero() {
                 <nav className="flex justify-between items-center mt-10">
                     <img src={logo} alt="logo" className="w-10" />
 
-                    <button className="bg-lgrey/20 border text-xs font-extralight border-lgrey rounded-full px-7 py-2">
+                    <button className="bg-lgrey/20 border text-xs font-extralight border-lgrey rounded-full px-7 py-2 hover:shadow-[0_14px_32px_17px_rgba(6,12,43,255)]">
                         View Github
                     </button>
 
