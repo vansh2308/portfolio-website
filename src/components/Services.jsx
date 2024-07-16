@@ -11,23 +11,23 @@ export default function Services() {
     return (
         <section className="flex flex-col w-screen gap-3 items-center mt-[3rem] mb-[5rem]">
             <div className="w-[60%] h-fit flex gap-5 text-lgrey">
-                <div className="w-full aspect-square bg-dgrey/40 text-[2rem] rounded-xl border-[0.5px] border-sky flex items-center justify-center" >
+                <div className="w-full aspect-square bg-gradient-to-br from-[#272d3c] to-dgrey text-[2rem] rounded-xl border-[0.5px] border-lgrey flex items-center justify-center" >
                     <FaLaptopCode />
                 </div>
                 <Partition />
-                <div className="w-full aspect-square bg-dgrey/40 rounded-xl text-[1.4rem] border-[0.5px] border-sky flex items-center justify-center" >
+                <div className="w-full aspect-square bg-gradient-to-br from-[#272d3c] to-dgrey rounded-xl text-[1.4rem] border-[0.5px] border-lgrey flex items-center justify-center" >
                     <FaCodeBranch />
                 </div>
                 <Partition />
-                <div className="w-full aspect-square bg-dgrey/40 rounded-xl text-[1.4rem] border-[0.5px] border-sky flex items-center justify-center" >
+                <div className="w-full aspect-square bg-gradient-to-br from-[#272d3c] to-dgrey  rounded-xl text-[1.4rem] border-[0.5px] border-lgrey flex items-center justify-center" >
                     <FaDatabase />
                 </div>
                 <Partition />
-                <div className="w-full aspect-square text-[1.9rem] bg-dgrey/40 rounded-xl border-[0.5px] border-sky flex items-center justify-center" >
+                <div className="w-full aspect-square bg-gradient-to-br from-[#272d3c] to-dgrey text-[1.9rem] rounded-xl border-[0.5px] border-lgrey flex items-center justify-center" >
                     <GiRobotGrab />
                 </div>
                 <Partition />
-                <div className="w-full aspect-square text-[1.9rem] bg-dgrey/40 rounded-xl border-[0.5px] border-sky flex items-center justify-center" >
+                <div className="w-full aspect-square bg-gradient-to-br from-[#272d3c] to-dgrey text-[1.9rem] rounded-xl border-[0.5px] border-lgrey flex items-center justify-center" >
                     <IoFingerPrint />
                 </div>
             </div>
