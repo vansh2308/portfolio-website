@@ -3,49 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import "./projects.css"
 
 
-// export default function ProjectsContainer(props) {
-//     let windowWidth = 0
-//     let horLenght = 0
-//     let distFromTop = 0
-//     let scrollDistance = 0
-//     const wrapperRef = useRef(null)
-//     const locomotiveRef = useRef(null)
 
-//     const handleScroll = (e) => {
-//         let scrollTop = window.pageYOffset;
-//         if (scrollTop >= distFromTop + 70 && scrollTop <= scrollDistance + 70) {
-//             locomotiveRef.current.style.transform = `translateX(-${scrollTop - distFromTop}px)`
-//         }
-//     }
-
-//     useEffect(() => {
-//         windowWidth = window.innerWidth
-//         horLenght = locomotiveRef.current.scrollWidth
-//         distFromTop = wrapperRef.current.offsetTop
-//         scrollDistance = distFromTop + horLenght - windowWidth
-//         wrapperRef.current.style.height = scrollDistance + "px"
-//         window.addEventListener("scroll", handleScroll, { passive: true })
-//         return (() => {
-//             window.removeEventListener("scroll", handleScroll)
-//         })
-//     })
-
-
-//     return (
-//         <div className="bilateral-container" ref={wrapperRef}>
-//             <div className="sticky-container" ref={locomotiveRef}>
-//                 {
-//                     [...Array(10).keys()].map((project, key) => {
-//                         return (
-//                             <ProjectTile />
-//                         )
-//                     })
-//                 }
-
-//             </div>
-//         </div>
-//     )
-// }
 
 export default function ProjectsContainer(){
     const ratio = 0.5    // y to x scroll ratio
@@ -76,9 +34,9 @@ export default function ProjectsContainer(){
 
     return(
         // wrapper
-        <div className="bg-black w-screen py-10 relative" ref={wrapperRef} >
+        <div className="bg-black w-screen py-10 relative max-[850px]:py-3 max-[850px]:hidden" ref={wrapperRef} >
             {/* bilateral scroller  */}
-            <div className="p-20 overflow-x-visible flex sticky top-0" ref={locomotiveRef}>
+            <div className="p-20 overflow-x-visible flex sticky top-0 max-[850px]:p-5" ref={locomotiveRef}>
                 {
                     [...Array(15).keys()].map((key) => {
                         return(

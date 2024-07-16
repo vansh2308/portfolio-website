@@ -38,8 +38,8 @@ export default {
       animation: {
         gradient: "gradient 3s linear infinite",
         splotlightLeft: "spotlightLeft 5s linear infinite",
-        splotlightRight: "spotlightRight 7s linear infinite",
-        borderSpin: "borderSpin 7s linear infinite" 
+        splotlightRight: "spotlightRight 4s linear infinite",
+        borderSpin: "borderSpin 4s linear infinite" 
       }
     },
   },

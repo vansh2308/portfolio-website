@@ -9,8 +9,8 @@ import { IoFingerPrint } from "react-icons/io5";
 
 export default function Services() {
     return (
-        <section className="flex flex-col w-screen gap-3 items-center mt-[3rem] mb-[5rem]">
-            <div className="w-[60%] h-fit flex gap-5 text-lgrey">
+        <section className="flex flex-col w-screen gap-3 items-center mt-[3rem] mb-[5rem] max-[850px]:mt-2">
+            <div className="w-[60%] h-fit flex gap-5 text-lgrey max-[850px]:gap-4 max-[850px]:w-[80%]">
                 <div className="w-full aspect-square bg-gradient-to-br from-[#272d3c] to-dgrey text-[2rem] rounded-xl border-[0.5px] border-lgrey flex items-center justify-center" >
                     <FaLaptopCode />
                 </div>
@@ -32,11 +32,11 @@ export default function Services() {
                 </div>
             </div>
 
-            <div className="flex gap-5 w-[60%]">
+            <div className="flex gap-5 w-[60%] max-[850px]:w-[80%] max-[850px]:gap-2 ">
                 {
                     servicesList.map((item, key) => {
                         return (
-                            <div className="w-full text-[0.7rem] font-thin text-center" key={key}>
+                            <div className="w-full text-[0.7rem] font-thin text-center max-[850px]:text-[0.5rem]" key={key}>
                                 {item ? item : ""}
                             </div>
                         )
@@ -44,7 +44,7 @@ export default function Services() {
                 }
             </div>
 
-            <p className="w-[50%] text-center mt-32 mb-20 font-thin leading-9 text-sm">
+            <p className="w-[50%] text-center mt-32 mb-20 font-thin leading-9 text-sm max-[850px]:my-20 max-[850px]:w-[80%] max-[850px]:mb-9">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum. s nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum.
             </p>
 
@@ -54,7 +54,7 @@ export default function Services() {
 
 function Partition() {
     return (
-        <div className="w-full flex justify-center items-center relative">
+        <div className="w-full flex justify-center items-center relative max-[850px]:hidden">
             <div className="bg-sky/60 h-[0.5px] w-[80%]" />
             <div className="bg-sky aspect-square w-[5px] left-1/2 rounded-full -translate-x-1/2 absolute" />
             <div className="border-[0.5px] border-sky/60 aspect-square w-[15px] left-1/2 rounded-full -translate-x-1/2 absolute" />

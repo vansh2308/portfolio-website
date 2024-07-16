@@ -26,15 +26,15 @@ export default function Hero() {
     return (
         <section className="w-screen justify-center flex">
             <div className="w-[85%] min-h-[95vh]  h-fit relative">
-                <div className="spotlight w-40 h-[45rem] z-20 bg-gradient-to-b from-transparent to-lgrey/20 absolute blur-3xl -rotate-45 -top-[10%] origin-top -left-[10%] animate-splotlightLeft" />
-                <div className="spotlight w-40 h-[40rem] z-30 bg-gradient-to-b from-transparent to-lgrey/20 absolute blur-3xl rotate-45 -top-[15%] origin-top right-[0%] animate-splotlightRight" />
+                <div className="spotlight w-40 h-[45rem] z-20 bg-gradient-to-b from-transparent to-lgrey/20 absolute blur-3xl -rotate-45 -top-[10%] origin-top -left-[10%] animate-splotlightLeft max-[850px]:blur-xl max-[850px]:h-[50vh] max-[850px]:top-0 max-[850px]:-left-[40vw] max-[850px]:w-20" />
+                <div className="spotlight w-40 h-[40rem] z-30 bg-gradient-to-b from-transparent to-lgrey/20 absolute blur-3xl rotate-45 -top-[15%] origin-top right-[0%] animate-splotlightRight max-[850px]:blur-xl max-[850px]:h-[60vh] max-[850px]:w-20 max-[850px]:top-36 max-[850px]:-right-[50%]" />
 
 
 
-                <nav className="flex justify-between items-center mt-10">
+                <nav className="flex justify-between items-center mt-10 max-[850px]:justify-center">
                     <img src={logo} alt="logo" className="w-10" />
 
-                    <button className="bg-lgrey/20 border text-xs font-extralight border-lgrey rounded-full px-7 py-2 hover:shadow-[0_14px_32px_17px_rgba(6,12,43,255)]">
+                    <button className="bg-lgrey/20 border text-xs font-extralight border-lgrey rounded-full px-7 py-2 hover:shadow-[0_14px_32px_17px_rgba(6,12,43,255)] max-[850px]:hidden">
                         View Github
                     </button>
 
@@ -73,7 +73,7 @@ export default function Hero() {
                     }}
                 />
 
-                <div className="bg-navy w-[60%] h-[40%] blur-[100px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+                <div className="bg-navy w-[60%] h-[40%] blur-[100px] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-[850px]:blur-2xl max-[850px]:w-[60%] max-[850px]:h-[50%]" />
 
                 <div className="h-full w-[0.5px] bg-gradient-to-b from-transparent via-sky/30 to-transparent absolute left-[20%]" />
                 <div
@@ -88,23 +88,23 @@ export default function Hero() {
 
                 <div className="flex flex-col overflow-x-visible w-full items-center h-fit relative mt-32">
                     <Hline />
-                    <div className="w-full flex justify-center items-center gap-5 py-7" ref={welcomeRef}>
-                        <div className="w-[10rem] h-[1.5px] bg-gradient-to-r from-transparent to-sky/50 " />
+                    <div className="w-full flex justify-center items-center gap-5 py-7 max-[850px]:p-4" ref={welcomeRef}>
+                        <div className="w-[10rem] h-[1.5px] bg-gradient-to-r from-transparent to-sky/50 max-[850px]:w-[2rem]" />
                         <span className="text-sm font-extralight ">Welcome to</span>
-                        <div className="w-[10rem] h-[1.5px] bg-gradient-to-l from-transparent to-sky/50 " />
+                        <div className="w-[10rem] h-[1.5px] bg-gradient-to-l from-transparent to-sky/50 max-[850px]:w-[2rem] " />
                     </div>
                     <Hline />
-                    <div className="text-[5.5rem] text-transparent font-bold text-center w-fit py-5 gradient-text animate-gradient" ref={nameRef}>
+                    <div className="text-[5.5rem] max-[850px]:text-[4rem] text-transparent font-bold text-center w-fit py-5 gradient-text animate-gradient" ref={nameRef}>
                         Vansh's
                     </div>
                     <Hline />
-                    <div className="flex flex-col items-center gap-2 py-5" ref={quoteRef}>
+                    <div className="flex flex-col items-center gap-2 py-5 max-[850px]:py-3 max-[850px]:gap-1" ref={quoteRef}>
                         <h4>Developer Portfolio</h4>
                         <span className="text-xs font-extralight ">Converting caffeine to code</span>
                     </div>
                     <Hline />
 
-                    <div className="flex justify-center items-center gap-9 text-dgrey text-[1.8rem] pt-24">
+                    <div className="flex justify-center items-center gap-9 text-dgrey text-[1.8rem] pt-24 max-[850px]:pt-40">
                         <button><FaGithub /></button>
                         <button><FaLinkedin /></button>
                         <button><SiGmail /></button>

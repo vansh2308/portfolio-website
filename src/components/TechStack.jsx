@@ -88,13 +88,13 @@ const techstack = [
 export default function TechStack() {
     return (
         <section className="w-screen flex items-center flex-col">
-            <div className="w-full flex justify-center items-center gap-5 mb-20">
-                <div className="w-[10rem] h-[1.5px] bg-gradient-to-r from-transparent to-sky/50 " />
-                <span className="text-sm font-extralight ">Tech Stack</span>
-                <div className="w-[10rem] h-[1.5px] bg-gradient-to-l from-transparent to-sky/50 " />
+            <div className="w-full flex justify-center items-center gap-5 mb-20 max-[850px]:mb-10">
+                <div className="w-[10rem] h-[1.5px] bg-gradient-to-r from-transparent to-sky/50 max-[850px]:w-[4rem]" />
+                <span className="text-sm font-extralight text-center ">Tech Stack</span>
+                <div className="w-[10rem] h-[1.5px] bg-gradient-to-l from-transparent to-sky/50 max-[850px]:w-[4rem]" />
             </div>
 
-            <div className="tech-stack-grid w-[60%] gap-5">
+            <div className="tech-stack-grid w-[60%] gap-5 max-[850px]:w-[75%] max-[850px]:gap-4">
                 {
                     techstack.map((item, key) => {
                         return(
@@ -106,7 +106,7 @@ export default function TechStack() {
                 }
             </div>
 
-            <img src={cs} alt="cs" className="w-[100vw] -mt-[11rem] -z-10 mix-blend-lighten" />
+            <img src={cs} alt="cs" className="w-[100vw] -mt-[11rem] -z-10 mix-blend-lighten max-[850px]:-mt-14 max-[850px]:min-w-[170vw]" />
 
 
 
