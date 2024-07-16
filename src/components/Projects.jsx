@@ -13,7 +13,7 @@ export default function ProjectsContainer(props) {
 
     const handleScroll = (e) => {
         let scrollTop = window.pageYOffset;
-        if (scrollTop >= distFromTop && scrollTop <= scrollDistance + 70) {
+        if (scrollTop >= distFromTop + 70 && scrollTop <= scrollDistance + 70) {
             locomotiveRef.current.style.transform = `translateX(-${scrollTop - distFromTop}px)`
         }
     }
