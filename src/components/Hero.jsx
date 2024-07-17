@@ -38,9 +38,11 @@ export default function Hero() {
                 <nav className="flex justify-between items-center mt-10 max-[850px]:justify-center">
                     <img src={logo} alt="logo" className="w-10" />
 
-                    <button className="bg-lgrey/20 border text-xs font-extralight border-lgrey rounded-full px-7 py-2 hover:shadow-[0_14px_32px_17px_rgba(6,12,43,255)] max-[850px]:hidden">
-                        View Github
-                    </button>
+                    <a href="https://github.com/vansh2308">
+                        <button className="bg-lgrey/20 border text-xs font-extralight border-lgrey rounded-full px-7 py-2 hover:shadow-[0_14px_32px_17px_rgba(6,12,43,255)] max-[850px]:hidden">
+                            View Github
+                        </button>
+                    </a>
 
                 </nav>
 
@@ -48,28 +50,40 @@ export default function Hero() {
 
                 {/* Dots  */}
                 <div className="w-[4px] aspect-square absolute bg-sky rounded-full left-[20%]"
-                    style={{ transform: `translate(-50%, ${welcomeTop}px)`, opacity: inView ? "100%" :  "0%",
-                        transition: "opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2s", }}
+                    style={{
+                        transform: `translate(-50%, ${welcomeTop}px)`, opacity: inView ? "100%" : "0%",
+                        transition: "opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2s",
+                    }}
                 />
                 <div className="w-[4px] aspect-square absolute bg-sky rounded-full left-[20%]"
-                    style={{ transform: `translate(-50%, ${welcomeTop + nameHeight}px)`, opacity: inView ? "100%" :  "0%",
-                        transition: "opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2s", }}
+                    style={{
+                        transform: `translate(-50%, ${welcomeTop + nameHeight}px)`, opacity: inView ? "100%" : "0%",
+                        transition: "opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2s",
+                    }}
                 />
                 <div className="w-[4px] aspect-square absolute bg-sky rounded-full left-[20%]"
-                    style={{ transform: `translate(-50%, ${welcomeTop + nameHeight + quoteHeight + 1}px)`, opacity: inView ? "100%" :  "0%",
-                        transition: "opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2s", }}
+                    style={{
+                        transform: `translate(-50%, ${welcomeTop + nameHeight + quoteHeight + 1}px)`, opacity: inView ? "100%" : "0%",
+                        transition: "opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2s",
+                    }}
                 />
                 <div className="w-[4px] aspect-square absolute bg-sky rounded-full right-[20%]"
-                    style={{ transform: `translate(50%, ${welcomeTop}px)`, opacity: inView ? "100%" :  "0%",
-                        transition: "opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2s", }}
+                    style={{
+                        transform: `translate(50%, ${welcomeTop}px)`, opacity: inView ? "100%" : "0%",
+                        transition: "opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2s",
+                    }}
                 />
                 <div className="w-[4px] aspect-square absolute bg-sky rounded-full right-[20%]"
-                    style={{ transform: `translate(50%, ${welcomeTop + nameHeight}px)`, opacity: inView ? "100%" :  "0%",
-                        transition: "opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2s", }}
+                    style={{
+                        transform: `translate(50%, ${welcomeTop + nameHeight}px)`, opacity: inView ? "100%" : "0%",
+                        transition: "opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2s",
+                    }}
                 />
                 <div className="w-[4px] aspect-square absolute bg-sky rounded-full right-[20%]"
-                    style={{ transform: `translate(50%, ${welcomeTop + nameHeight + quoteHeight + 1}px)`, opacity: inView ? "100%" :  "0%",
-                        transition: "opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2s", }}
+                    style={{
+                        transform: `translate(50%, ${welcomeTop + nameHeight + quoteHeight + 1}px)`, opacity: inView ? "100%" : "0%",
+                        transition: "opacity 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 2s",
+                    }}
                 />
 
 
@@ -80,7 +94,7 @@ export default function Hero() {
                     style={{
                         width: `${welcomeHeight - 30}px`,
                         transform: `translate(-${welcomeHeight * 3 / 4}px, ${welcomeTop + 15}px)`,
-                        opacity: inView ? "100%" :  "0%",
+                        opacity: inView ? "100%" : "0%",
                         transition: "opacity 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
 
                     }}
@@ -89,7 +103,7 @@ export default function Hero() {
                     style={{
                         width: `${welcomeHeight - 30}px`,
                         transform: `translate(${welcomeHeight * 3 / 4}px, ${welcomeTop + 15}px)`,
-                        opacity: inView ? "100%" :  "0%",
+                        opacity: inView ? "100%" : "0%",
                         transition: "opacity 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
                     }}
                 />
@@ -108,7 +122,7 @@ export default function Hero() {
                     height: inView ? "100%" : "0",
                     transition: "all 2.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                 }}
-                 />
+                />
                 <div
                     className="h-full w-[0.5px] bg-gradient-to-b from-transparent via-sky/30 to-transparent absolute left-[20%]"
                     style={{
@@ -118,9 +132,9 @@ export default function Hero() {
                     }}
                 />
                 <div className="h-full w-[0.5px] bg-gradient-to-b from-transparent via-sky/30 to-transparent absolute right-[20%]" style={{
-                        height: inView ? "100%" : "0",
-                        transition: "height 2.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-                    }} />
+                    height: inView ? "100%" : "0",
+                    transition: "height 2.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                }} />
                 <div
                     className="h-full w-[0.5px] bg-gradient-to-b from-transparent via-sky/30 to-transparent absolute right-[20%]"
                     style={{
@@ -160,10 +174,10 @@ export default function Hero() {
                     <Hline inView={inView} />
 
                     <div className="flex justify-center items-center gap-9 text-dgrey text-[1.8rem] pt-24 max-[850px]:pt-40">
-                        <button><FaGithub /></button>
-                        <button><FaLinkedin /></button>
-                        <button><SiGmail /></button>
-                        <button><PiDribbbleLogoFill /></button>
+                        <a href="https://github.com/vansh2308"> <button><FaGithub /></button> </a>
+                        <a href="https://www.linkedin.com/in/vansh-agarwal-9b2836166/"> <button><FaLinkedin /></button> </a>
+                        <a href='mailto:agarwal.25@iitj.ac.in'> <button><SiGmail /></button> </a>
+                        <a href="https://dribbble.com/vansh2308"> <button><PiDribbbleLogoFill /></button> </a>
                     </div>
 
                 </div>
