@@ -39,6 +39,8 @@ import { SiTensorflow } from "react-icons/si";
 import { TbBrandThreejs } from "react-icons/tb";
 import { SiTypescript } from "react-icons/si";
 import { SiGooglecloud } from "react-icons/si";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 
 
@@ -57,7 +59,7 @@ const techstack = [
     { logo: <IoLogoFirebase />, name: "Firebase" },
     { logo: <SiFlask />, name: "Flask" },
     { logo: <FaGitAlt />, name: "Git" },
-    { logo: <FaGithub/>, name: "Github" },
+    { logo: <FaGithub />, name: "Github" },
     { logo: <FaGolang />, name: "Golang" },
     { logo: <GrGraphQl />, name: "Apollo GraphQL" },
     { logo: <FaCss3Alt />, name: "CSS3" },
@@ -77,15 +79,18 @@ const techstack = [
     { logo: <FaReact />, name: "React Js" },
     { logo: <SiPytorch />, name: "Pytorch" },
     { logo: <SiRedux />, name: "Redux" },
-    { logo: <SiRedis/>, name: "Redis" },
+    { logo: <SiRedis />, name: "Redis" },
     { logo: <SiTailwindcss />, name: "Tailwind CSS" },
     { logo: <SiTensorflow />, name: "Tensorflow" },
     { logo: <TbBrandThreejs />, name: "Three JS" },
     { logo: <SiTypescript />, name: "Typescript" },
-    { logo: <SiGooglecloud />, name: "Google Cloud Platform" },   
+    { logo: <SiGooglecloud />, name: "Google Cloud Platform" },
 ]
 
 export default function TechStack() {
+    const ref = useRef(null)
+    const inView = useInView(ref, { once: true })
+
     return (
         <section className="w-screen flex items-center flex-col">
             <div className="w-full flex justify-center items-center gap-5 mb-20 max-[850px]:mb-10">
@@ -94,11 +99,17 @@ export default function TechStack() {
                 <div className="w-[10rem] h-[1.5px] bg-gradient-to-l from-transparent to-sky/50 max-[850px]:w-[4rem]" />
             </div>
 
-            <div className="tech-stack-grid w-[60%] gap-5 max-[850px]:w-[75%] max-[850px]:gap-4">
+            <div className="tech-stack-grid w-[60%] gap-5 max-[850px]:w-[75%] max-[850px]:gap-4" ref={ref}>
                 {
                     techstack.map((item, key) => {
-                        return(
-                            <div className="w-full aspect-square bg-gradient-to-bl from-[#272d3c] to-dgrey rounded-md border-[0.5px] border-lgrey flex items-center justify-center text-[1.9rem]" key={key}>
+                        return (
+                            <div className="w-full aspect-square bg-gradient-to-bl from-[#272d3c] to-dgrey rounded-md border-[0.5px] border-lgrey flex items-center justify-center text-[1.9rem]" key={key}
+                                style={{
+                                    transform: inView ? "none" : "translateY(50px)",
+                                    opacity: inView ? 1 : 0,
+                                    transition: `all 2s cubic-bezier(0.17, 0.55, 0.55, 1) ${( parseInt(key/10))*0.2}s`
+                                }}
+                            >
                                 {item.logo}
                             </div>
                         )

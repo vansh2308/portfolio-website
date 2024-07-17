@@ -1,11 +1,22 @@
+import { useInView } from "framer-motion"
+import { useRef } from "react"
 
 
 export default function Footer(){
+    const ref = useRef( null)
+    const inView = useInView(ref, { once: true })
+
     return(
         <div className="w-screen h-fit p-32 relative min-h-screen py-40  max-[850px]:py-20 max-[850px]:px-10">
             <div className="absolute bg-[#060c2b] w-[60%] h-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 top-0 -z-10 blur-[100px] max-[850px]:h-[40%]" />
             <div className="flex justify-center gap-24 max-[850px]:flex-col max-[850px]:items-center max-[850px]:gap-10">
-                <h3 className="text-5xl font-bold leading-[150%] tracking-wider w-4/5 max-[850px]:text-center max-[850px]:text-2xl">
+                <h3 className="text-5xl font-bold leading-[150%] tracking-wider w-4/5 max-[850px]:text-center max-[850px]:text-2xl"
+                ref = {ref}
+                style={{
+                    transform: inView ? "none" : "translateY(50px)",
+                    opacity: inView ? 1 : 0,
+                    transition: `all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s`
+                }}>
                 Feel free to fill up your details, I will reach out to you asap
                 </h3>
                 <form className="w-[80%] h-[50vh] rounded-md flex flex-col items-center gap-7 pt-5 max-[850px]:w-[90%]" autoComplete="off">
