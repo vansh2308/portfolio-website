@@ -1,13 +1,23 @@
 
 .project-container {
     border-radius: 7px;
-    height: 400px;
+    height: 500px;
+    min-height: fit-content;
     width: 20%;
     flex-shrink: 0;
     margin-left: 40px;
+    overflow: hidden;
 }
 
 .project-container:last-child{
     margin-right: 50px;
 }
 
+.project-container:hover img{
+    mix-blend-mode: normal;
+}
+
+.project-container img{
+    transition: all 1s ease-in;
+    -webkit-transition: all 1s ease-in;
+}

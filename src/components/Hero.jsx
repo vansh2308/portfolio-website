@@ -26,7 +26,7 @@ export default function Hero() {
     }, [])
 
     return (
-        <section className="w-screen justify-center flex">
+        <section className="w-screen justify-center flex max-[850px]:overflow-x-hidden max-[850px]:min-h-max">
             <div className="w-[85%] min-h-[95vh]  h-fit relative">
 
                 {/* spotlights  */}

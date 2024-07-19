@@ -107,7 +107,7 @@ export default function TechStack() {
                                 style={{
                                     transform: inView ? "none" : "translateY(50px)",
                                     opacity: inView ? 1 : 0,
-                                    transition: `all 2s cubic-bezier(0.17, 0.55, 0.55, 1) ${( parseInt(key/10))*0.2}s`
+                                    transition: `all 2s cubic-bezier(0.17, 0.55, 0.55, 1) ${( parseInt(key/10))*0.4}s`
                                 }}
                             >
                                 {item.logo}
@@ -117,7 +117,7 @@ export default function TechStack() {
                 }
             </div>
 
-            <img src={cs} alt="cs" className="w-[100vw] -mt-[11rem] -z-10 mix-blend-lighten max-[850px]:-mt-14 max-[850px]:min-w-[170vw]" />
+            <img src={cs} alt="cs" className="w-[100vw] -mt-[11rem] -z-10 mix-blend-lighten max-[850px]:-mt-14 max-[850px]:min-w-[170vw] max-[850px]:hidden" />
 
 
 
