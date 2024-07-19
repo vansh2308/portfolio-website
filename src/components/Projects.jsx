@@ -2,18 +2,65 @@
 import { useEffect, useRef, useState } from "react"
 import "./projects.css"
 
-import lionImg from "./../assets/images.jpeg"
+
 import { FaLink } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
 
+import redisImg from "./../assets/projects/redis.jpg"
+import llmImg from "./../assets/projects/llm.jpg"
+import neatImg from "./../assets/projects/neat.jpg"
+import cryptoDashImg from "./../assets/projects/crypto-dash.png"
+import ignusImg from "./../assets/projects/ignus.png"
+import jdAcadImg from "./../assets/projects/jd-acad.png"
+import mkdnEditorImg from "./../assets/projects/mkdn-editor.png"
+import vidStreamingPng from "./../assets/projects/vid-streaming.png"
+import weatherDashPng from "./../assets/projects/weather-dash.png"
+
 const projectList = [
     {
-        name: "Mkdn editor",
+        thumbnailSrc: redisImg,
+        name: "MAPD - Redis Clone",
         description: "lorem ipsum"
     }, 
     {
-        name: "LLm from scratch",
+        thumbnailSrc: llmImg,
+        name: "LLM from scratch",
         description: "lorem ipsum"
+    },
+    {
+        thumbnailSrc: neatImg,
+        name: "FlappyBird AI Agent",
+        description: "lorem ipsum"
+    },
+    {
+        thumbnailSrc: cryptoDashImg,
+        name: "Crypto Dashboard",
+        description: ""
+    },
+    {
+        thumbnailSrc: ignusImg,
+        name: "Ignus 2022",
+        description: ""
+    },
+    {
+        thumbnailSrc: jdAcadImg,
+        name: "Jodhpur Acad Landing",
+        description: ""
+    }, 
+    {
+        thumbnailSrc: mkdnEditorImg,
+        name: "In-browser markdown editor",
+        description: ""
+    },
+    {
+        thumbnailSrc: vidStreamingPng,
+        name: "Video Streaming Platform",
+        description: "",
+    },
+    {
+        thumbnailSrc: weatherDashPng,
+        name: "Weather Dashboard",
+        description: ""
     }
 ]
 
@@ -34,7 +81,7 @@ export default function ProjectsContainer(){
     useEffect(() => {
         let verScrollDistance = locomotiveRef.current.clientWidth / ratio
         distanceFromTop = wrapperRef.current.getBoundingClientRect().top
-        wrapperRef.current.style.height = `${verScrollDistance}px` 
+        wrapperRef.current.style.height = `${verScrollDistance*2}px` 
 
 
         window.addEventListener("scroll", handleScroll, { passive: true })
@@ -52,13 +99,11 @@ export default function ProjectsContainer(){
             {/* bilateral scroller  */}
             <div className="p-20 overflow-x-visible flex sticky top-0 max-[850px]:p-5" ref={locomotiveRef}>
                 {
-                    [...Array(15).keys()].map((key) => {
+                    [...Array(27).keys()].map((key) => {
                         return(
                             <ProjectTile  key={key} project={ projectList[key%projectList.length] }/>
                         )
                     })
-
-                    
                 }
             </div>
 
@@ -82,7 +127,7 @@ function ProjectTile( {project} ) {
 
 
             <div className="w-full aspect-square bg-navy overflow-hidden flex justify-center items-center">
-                <img src = {lionImg} alt="test" className=" mix-blend-luminosity size-full object-cover" />
+                <img src = {project.thumbnailSrc} alt="test" className=" mix-blend-luminosity size-full object-cover" />
             </div>
 
             <div className="p-4 flex flex-col gap-2 max-h-full">
