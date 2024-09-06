@@ -67,7 +67,7 @@ const projectList = [
 
 
 export default function ProjectsContainer(){
-    const ratio = 0.5    // y to x scroll ratio
+    const ratio = 0.4    // y to x scroll ratio
     const wrapperRef = useRef(null)
     const locomotiveRef = useRef(null)
     let distanceFromTop = null
@@ -131,7 +131,7 @@ function ProjectTile( {project} ) {
             </div>
 
             <div className="p-4 flex flex-col gap-2 max-h-full">
-                <h4 className="font-medium text-xl"> {project.name} </h4>
+                <h4 className="font-medium text-[1rem] max-h-min text-wrap overflow-hidden"> {project.name} </h4>
                 <div className="flex justify-between items-center mb-4">
                     <h5 className="font-extralight text-xs">Python C++</h5>
                     <div className="flex gap-2 text-lg items-center">

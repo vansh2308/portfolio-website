@@ -8,7 +8,13 @@ export default function Footer() {
 
     return (
         <div className="w-screen h-fit p-32 relative min-h-screen py-40  max-[850px]:py-20 max-[850px]:px-10">
-            <div className="absolute bg-[#060c2b] w-[60%] h-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 top-0 -z-10 blur-[100px] max-[850px]:h-[40%]" />
+            <div className="absolute bg-[#060c2b] h-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 top-0 -z-10 blur-[100px] max-[850px]:h-[40%]"
+                style={{
+                    width: inView ? "60%" : "0",
+                    transition: `all 2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.8s`
+                }}
+
+            />
             <div className="flex justify-center gap-24 max-[850px]:flex-col max-[850px]:items-center max-[850px]:gap-10">
                 <h3 className="text-5xl font-bold leading-[150%] tracking-wider w-4/5 max-[850px]:text-center max-[850px]:text-2xl"
                     ref={ref}
