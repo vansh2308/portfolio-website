@@ -1,10 +1,28 @@
 import { useInView } from "framer-motion"
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
+import emailjs from '@emailjs/browser';
 
 
 export default function Footer() {
     const ref = useRef(null)
+    const formRef = useRef(null)
     const inView = useInView(ref, { once: true })
+
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, formRef.current, {
+            publicKey: import.meta.env.VITE_PUBLIC_KEY,
+          })
+          .then(
+            () => {
+              console.log('SUCCESS!');
+            },
+            (error) => {
+              console.log('FAILED...', error.text);
+            },
+          );
+      };
 
     return (
         <div className="w-screen h-fit p-32 relative min-h-screen py-40  max-[850px]:py-20 max-[850px]:px-10">
@@ -25,7 +43,13 @@ export default function Footer() {
                     }}>
                     Feel free to fill up your details, I will reach out to you asap
                 </h3>
-                <form className="w-[80%] h-[50vh] rounded-md flex flex-col items-center gap-7 pt-5 max-[850px]:w-[90%]" autoComplete="off">
+
+                <form 
+                    className="w-[80%] h-[50vh] rounded-md flex flex-col items-center gap-7 pt-5 max-[850px]:w-[90%]" 
+                    autoComplete="off" 
+                    ref={formRef}
+                    onSubmit={sendEmail}
+                >
                     <div className="w-full">
                         <input required type="text" placeholder="Name" name="name" className="text-sm bg-transparent p-3 focus:outline-none w-full text-center" />
                         <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-sky to-transparent" />
@@ -35,21 +59,20 @@ export default function Footer() {
                         <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-sky to-transparent" />
                     </div>
                     <div className="w-full">
-                        <input type="text" placeholder="Whatsapp No" name="whatsapp-no" className="text-sm bg-transparent p-3 focus:outline-none w-full text-center" />
+                        <input type="text" placeholder="Whatsapp No" name="contact" className="text-sm bg-transparent p-3 focus:outline-none w-full text-center" />
                         <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-sky to-transparent" />
                     </div>
 
                     <button
                         type="submit"
                         className="bg-lgrey/20 border text-xs font-extralight w-fit mt-16 border-lgrey rounded-full px-8 py-3 hover:shadow-[0_14px_32px_17px_rgba(6,12,43,255)] max-[850px]:mt-5"
-                        onClick={(e) => {
-                            e.preventDefault()
-                        }}
+                        // onClick={(e) => {
+                        //     e.preventDefault()
+                        // }}
 
                     >
                         Let's schedule a meet
                     </button>
-
                 </form>
             </div>
 
