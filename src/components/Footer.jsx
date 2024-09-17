@@ -8,6 +8,12 @@ export default function Footer() {
     const formRef = useRef(null)
     const inView = useInView(ref, { once: true })
 
+    useEffect(() => {
+        console.log("process.env ", process.env.VITE_PUBLIC_KEY);
+        console.log("meta.env ", import.meta.env.VITE_PUBLIC_KEY);
+
+    }, [])
+
 
     const sendEmail = (e) => {
         e.preventDefault();
