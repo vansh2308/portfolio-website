@@ -48,9 +48,9 @@ export const EvervaultCard = ({
         <div className="dark relative z-10 flex items-center justify-center">
           <div className="relative min-h-max aspect-square h-[40rem] w-[40rem] rounded-full flex items-center justify-center text-white font-bold text-4xl">
             <div className="absolute w-full h-full bg-white/[0.8] dark:bg-black/[0.8] blur-[2rem] rounded-full" />
-            <span className="dark:text-white text-black z-20 text-[1.5rem] text-center">
+            <span className="dark:text-white text-black z-20 text-[1.5rem] text-center font-mono">
                 Hi, Welcome to 
-                <h3 className="text-[2.7rem] mt-3">Vansh's Techscape</h3>
+                <h3 className="text-[3rem] mt-3 font-bitcount font-normal">Vansh's Techscape</h3>
                 <ul className="flex gap-5 items-center justify-between text-[1rem] font-bold mt-8 bg-gradient-to-r from-green-400 to-blue-400  bg-clip-text text-transparent">
                     <li>Software Developer</li>
                     <li>|</li>
