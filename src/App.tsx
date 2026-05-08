@@ -1,161 +1,151 @@
-
-import { Hero } from "./components/Hero"
-import { InfiniteMovingCards } from "./components/ui/infinite-moving-cards"
+import { Hero } from "./components/Hero";
+import { InfiniteMovingCards } from "./components/ui/infinite-moving-cards";
 // import { Timeline } from "./components/ui/timeline";
 
-import { FaAws, FaDocker, FaGitAlt, FaGithub, FaPython, FaLinux, FaReact, FaJava } from "react-icons/fa";
-import { SiExpress, SiApachekafka, SiKubernetes, SiMongodb, SiPytorch, SiRedux, SiPandas, SiScikitlearn, SiNumpy,  } from "react-icons/si";
+import {
+  FaAws,
+  FaDocker,
+  FaGitAlt,
+  FaGithub,
+  FaPython,
+  FaLinux,
+  FaReact,
+  FaJava,
+} from "react-icons/fa";
+import {
+  SiExpress,
+  SiApachekafka,
+  SiKubernetes,
+  SiMongodb,
+  SiPytorch,
+  SiRedux,
+  SiPandas,
+  SiScikitlearn,
+  SiNumpy,
+} from "react-icons/si";
 import { TbBrandCpp } from "react-icons/tb";
 import { GrGraphQl } from "react-icons/gr";
 import { IoLogoJavascript, IoLogoNodejs } from "react-icons/io5";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { FaGolang } from "react-icons/fa6";
+import { Timeline } from "./components/ui/timeline";
+import { cn } from "./lib/utils";
 
-// const data = [
-//   {
-//     title: "2024",
-//     content: (
-//       <div>
-//         <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-//           Built and launched Aceternity UI and Aceternity UI Pro from scratch
-//         </p>
-//         <div className="grid grid-cols-2 gap-4">
-//           <img
-//             src="https://assets.aceternity.com/templates/startup-1.webp"
-//             alt="startup template"
-//             width={500}
-//             height={500}
-//             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-//           />
-//           <img
-//             src="https://assets.aceternity.com/templates/startup-2.webp"
-//             alt="startup template"
-//             width={500}
-//             height={500}
-//             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-//           />
-//           <img
-//             src="https://assets.aceternity.com/templates/startup-3.webp"
-//             alt="startup template"
-//             width={500}
-//             height={500}
-//             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-//           />
-//           <img
-//             src="https://assets.aceternity.com/templates/startup-4.webp"
-//             alt="startup template"
-//             width={500}
-//             height={500}
-//             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-//           />
-//         </div>
-//       </div>
-//     ),
-//   },
-//   {
-//     title: "Early 2023",
-//     content: (
-//       <div>
-//         <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-//           I usually run out of copy, but when I see content this big, I try to
-//           integrate lorem ipsum.
-//         </p>
-//         <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-//           Lorem ipsum is for people who are too lazy to write copy. But we are
-//           not. Here are some more example of beautiful designs I built.
-//         </p>
-//         <div className="grid grid-cols-2 gap-4">
-//           <img
-//             src="https://assets.aceternity.com/pro/hero-sections.png"
-//             alt="hero template"
-//             width={500}
-//             height={500}
-//             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-//           />
-//           <img
-//             src="https://assets.aceternity.com/features-section.png"
-//             alt="feature template"
-//             width={500}
-//             height={500}
-//             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-//           />
-//           <img
-//             src="https://assets.aceternity.com/pro/bento-grids.png"
-//             alt="bento template"
-//             width={500}
-//             height={500}
-//             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-//           />
-//           <img
-//             src="https://assets.aceternity.com/cards.png"
-//             alt="cards template"
-//             width={500}
-//             height={500}
-//             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-//           />
-//         </div>
-//       </div>
-//     ),
-//   },
-//   {
-//     title: "Changelog",
-//     content: (
-//       <div>
-//         <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-//           Deployed 5 new components on Aceternity today
-//         </p>
-//         <div className="mb-8">
-//           <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-//             ✅ Card grid component
-//           </div>
-//           <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-//             ✅ Startup template Aceternity
-//           </div>
-//           <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-//             ✅ Random file upload lol
-//           </div>
-//           <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-//             ✅ Himesh Reshammiya Music CD
-//           </div>
-//           <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-//             ✅ Salman Bhai Fan Club registrations open
-//           </div>
-//         </div>
-//         <div className="grid grid-cols-2 gap-4">
-//           <img
-//             src="https://assets.aceternity.com/pro/hero-sections.png"
-//             alt="hero template"
-//             width={500}
-//             height={500}
-//             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-//           />
-//           <img
-//             src="https://assets.aceternity.com/features-section.png"
-//             alt="feature template"
-//             width={500}
-//             height={500}
-//             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-//           />
-//           <img
-//             src="https://assets.aceternity.com/pro/bento-grids.png"
-//             alt="bento template"
-//             width={500}
-//             height={500}
-//             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-//           />
-//           <img
-//             src="https://assets.aceternity.com/cards.png"
-//             alt="cards template"
-//             width={500}
-//             height={500}
-//             className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-//           />
-//         </div>
-//       </div>
-//     ),
-//   },
-// ];
+function TimelineContentHighlight({ text, className }: { text: string, className?: string | null}) {
+  return <span className={cn("font-[1000] text-green-400", className)}>{text}</span>;
+}
 
+const data = [
+  {
+    title: "2019",
+    content: (
+      <div>
+        <h4 className="mb-8 !text-3xl font-semibold text-neutral-800 md:text-sm dark:text-neutral-200">
+          Chaos, Curiosity & Survival
+        </h4>
+        <p className="text-lg text-muted-foreground font-thin">
+          <TimelineContentHighlight text="JEE prep" /> happened in the middle of
+          lockdowns, uncertainty, and endless online classes I barely attended.{" "}
+          <br />
+          Got into the coding world as an{" "}
+          <TimelineContentHighlight text="Infosys Trainee" /> <br />
+          Somewhere between all that, a{" "}
+          <TimelineContentHighlight text="NASA Space Settlement Contest Honourable Mention" />{" "}
+          quietly became proof that I could build beyond textbooks.
+        </p>
+        {/* <div className="grid grid-cols-2 gap-4">
+          <img
+            src="https://assets.aceternity.com/templates/startup-1.webp"
+            alt="startup template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+          <img
+            src="https://assets.aceternity.com/templates/startup-2.webp"
+            alt="startup template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+          <img
+            src="https://assets.aceternity.com/templates/startup-3.webp"
+            alt="startup template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+          <img
+            src="https://assets.aceternity.com/templates/startup-4.webp"
+            alt="startup template"
+            width={500}
+            height={500}
+            className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+          />
+        </div> */}
+      </div>
+    ),
+  },
+  {
+    title: "2021-23",
+    content: (
+      <div>
+        <h4 className="mb-8 !text-3xl font-semibold text-neutral-800 md:text-sm dark:text-neutral-200">
+          IIT: Engineering Through Chaos
+        </h4>
+        <p className="text-lg text-muted-foreground font-thin">
+          Got into <TimelineContentHighlight text="IIT Jodhpur" /> with big
+          expectations and very little idea of what college life would actually
+          look like. <br />
+          Slowly moved from being “just another fresher” to leading communities
+          as <TimelineContentHighlight
+            text={"Google Dev Students Club Lead"}
+          />{" "}
+          and shipping things like the{" "}
+          <TimelineContentHighlight text={"Ignus Website"} /> <br />
+          <TimelineContentHighlight
+            text={"IITJ taught us surviving 3 days without water."}
+          />
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "2023-25",
+    content: (
+      <div>
+        <h4 className="mb-8 !text-3xl font-semibold text-neutral-800 md:text-sm dark:text-neutral-200">
+          Building, Breaking Limits & Goodbyes
+        </h4>
+        <p className="text-lg text-muted-foreground font-thin">
+          Cracked <TimelineContentHighlight text={"GSOC"} />, interned at{" "}
+          <TimelineContentHighlight text={"GoQuant"} />, spent nights building
+          things that felt bigger than coursework. <br />
+          In between all the grind were{" "}
+          <TimelineContentHighlight text={"trips & late-night memories"} /> that
+          made IIT feel like home. <br />
+          Then comes a day, when we probably had the <TimelineContentHighlight text={"last conversation with some people"}/>
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "2025-2026",
+    content: (
+      <div>
+        <h4 className="mb-8 !text-3xl font-semibold text-neutral-800 md:text-sm dark:text-neutral-200">
+          The Real World
+        </h4>
+        <p className="text-lg text-muted-foreground font-thin">
+          Worked as <TimelineContentHighlight text="AI-ML Engineer at Writesonic"/> for ~6 months <br/>
+          Joined <TimelineContentHighlight text="IBM as Associate Engineer"/> but soon started feeling <TimelineContentHighlight text={"mechanical"} /> <br/><br/>
+          <TimelineContentHighlight text={"THE NEXT CHAPTER :"} className={"underline underline-offset-6"} /> Looking forward to working at fast-paced startups / business... 
+          <TimelineContentHighlight text= "Let's build real stuff, not just LLM wrappers or prompt engineering." />
+        </p>
+      </div>
+    ),
+  },
+];
 
 const techstack2 = [
   { logo: <FaReact />, name: "React Js" },
@@ -171,7 +161,7 @@ const techstack2 = [
   { logo: <BiLogoPostgresql />, name: "PostgreSQL" },
   { logo: <FaAws />, name: "Amazon Web Services" },
   { logo: <SiApachekafka />, name: "Apache Kafka" },
-]
+];
 
 const techstack3 = [
   { logo: <SiPytorch />, name: "Pytorch" },
@@ -188,7 +178,7 @@ const techstack3 = [
   { name: "Quant Finance" },
   { name: "Stochastic Calculus" },
   { name: "Optimization" },
-]
+];
 
 const techstack = [
   { logo: <TbBrandCpp />, name: "C++" },
@@ -198,7 +188,7 @@ const techstack = [
   { logo: <IoLogoJavascript />, name: "Javascript" },
   { logo: <FaGolang />, name: "Golang" },
   { name: "OOPs" },
-]
+];
 
 function App() {
   return (
@@ -223,16 +213,13 @@ function App() {
         className="font-mono"
       />
 
-      {/* <section className="dark mt-20">
+      <section className="dark mt-20">
         <Timeline data={data} />
-      </section> */}
-
-      <section className="w-screen h-screen dark">
-
       </section>
 
+      <section className="w-screen h-screen dark"></section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

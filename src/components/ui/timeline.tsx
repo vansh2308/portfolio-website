@@ -35,16 +35,16 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="dark w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
+      className="dark w-[70vw] mx-auto bg-white dark:bg-neutral-950 font-sans md:px-10 mt-40"
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto pt-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl font-medium mb-4 text-black dark:text-white max-w-4xl">
-          Glimpse of my journey
+        <h2 className="text-lg md:text-4xl font-medium mb-2 text-black font-bitcount dark:text-white max-w-4xl ">
+          A glimpse of my journey
         </h2>
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 ">
         {data.map((item, index) => (
           <div
             key={index}
@@ -54,13 +54,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500 ">
+              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-semibold text-neutral-500 dark:text-neutral-500 font-bitcount">
                 {item.title}
               </h3>
             </div>
 
-            <div className="relative pl-20 pr-4 md:pl-4 w-full">
-              <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
+            <div className="relative pl-20 pr-4 md:pl-4 w-full font-mono">
+              <h3 className="md:hidden block text-2xl mb-4 text-left font-semibold text-neutral-500 dark:text-neutral-500 font-bitcount">
                 {item.title}
               </h3>
               {item.content}{" "}
@@ -78,7 +78,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
+            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-green-400 via-blue-400 to-transparent from-[0%] via-[40%] rounded-full"
           />
         </div>
       </div>

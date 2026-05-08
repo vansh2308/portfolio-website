@@ -56,7 +56,7 @@ export const EvervaultCard = ({
                     <li>•</li>
                     <li>Data Scientist</li>
                     <li>•</li>
-                    <li>Quant Developer</li>
+                    <li>AI/ML Engineer</li>
                 </ul>
             </span>
           </div>
