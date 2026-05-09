@@ -1,4 +1,3 @@
-
 "use client";
 import {
   // useMotionValueEvent,
@@ -39,8 +38,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto pt-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl font-medium mb-2 text-black font-bitcount dark:text-white max-w-4xl ">
-          A glimpse of my journey
+        <h2 className="text-5xl md:text-5xl font-light mb-2 text-black font-bitcount dark:text-white max-w-4xl">
+          A glimpse of my{" "}
+          <span className="bg-gradient-to-r from-green-400 to-blue-400 text-transparent bg-clip-text">
+            {" "}
+            journey{" "}
+          </span>
         </h2>
       </div>
 

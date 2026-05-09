@@ -30,6 +30,7 @@ import { BiLogoPostgresql } from "react-icons/bi";
 import { FaGolang } from "react-icons/fa6";
 import { Timeline } from "./components/ui/timeline";
 import { cn } from "./lib/utils";
+import { HeroParallax } from "./components/ui/hero-parallax";
 
 function TimelineContentHighlight({ text, className }: { text: string, className?: string | null}) {
   return <span className={cn("font-[1000] text-green-400", className)}>{text}</span>;
@@ -217,7 +218,55 @@ function App() {
         <Timeline data={data} />
       </section>
 
-      <section className="w-screen h-screen dark"></section>
+      {/* <section className="w-screen h-screen dark"></section> */}
+
+      <HeroParallax products={[
+        {
+          title: 'Flux',
+          link: 'https://github.com/vansh2308/website-builder-saas.git',
+          thumbnail: "https://github.com/vansh2308/Flux/raw/master/public/flux-render.png"
+        }, 
+        {
+          title: 'COSMOS',
+          link: 'https://github.com/vansh2308/cosmos.git',
+          thumbnail: "https://github.com/vansh2308/cosmos/raw/master/static/hero-cosmos.png"
+        }, 
+        {
+          title: 'OdourGNN',
+          link: 'https://github.com/vansh2308/Odour-GNN.git',
+          thumbnail: "https://github.com/vansh2308/Odour-GNN/raw/master/figures/readme-hero.png"
+        }, 
+        {
+          title: 'SmartSchedule',
+          link: 'https://github.com/vansh2308/genetic-class-scheduler.git',
+          thumbnail: "https://github.com/vansh2308/genetic-class-scheduler/blob/master/static/thumbnail.png?raw=true"
+        }, 
+        {
+          title: 'COSMOS',
+          link: 'https://github.com/vansh2308/cosmos.git',
+          thumbnail: "https://github.com/vansh2308/cosmos/raw/master/static/hero-cosmos.png"
+        }, 
+        {
+          title: 'Flux',
+          link: 'https://github.com/vansh2308/website-builder-saas.git',
+          thumbnail: "https://github.com/vansh2308/Flux/raw/master/public/flux-render.png"
+        }, 
+        {
+          title: 'SmartSchedule',
+          link: 'https://github.com/vansh2308/genetic-class-scheduler.git',
+          thumbnail: "https://github.com/vansh2308/genetic-class-scheduler/blob/master/static/thumbnail.png?raw=true"
+        }, 
+        {
+          title: 'OdourGNN',
+          link: 'https://github.com/vansh2308/Odour-GNN.git',
+          thumbnail: "https://github.com/vansh2308/Odour-GNN/raw/master/figures/readme-hero.png",
+          thumbnailClassname: 'mix-blend-multiply'
+        }, 
+
+        
+        
+        
+      ]}/>
     </>
   );
 }
