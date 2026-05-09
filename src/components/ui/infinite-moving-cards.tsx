@@ -91,10 +91,10 @@ export const InfiniteMovingCards = ({
                         key={idx}
                     >
                         <blockquote className="flex gap-4 items-center justify-center">
-                            {item.logo && <span className="relative z-20 text-[1.5rem] leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
+                            {item.logo && <span className="relative z-20 md:text-[1.5rem] text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
                                 {item.logo}
                             </span>}
-                            <span className="text-lg font-medium leading-[1.6] text-neutral-500 dark:text-gray-400">
+                            <span className="md:text-lg text-xs font-medium leading-[1.6] text-neutral-500 dark:text-gray-400">
                                 {item.name}
                             </span>
                         </blockquote>

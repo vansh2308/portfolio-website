@@ -34,11 +34,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="dark w-[70vw] mx-auto bg-white dark:bg-neutral-950 font-sans md:px-10 mt-40"
+      className="dark md:w-[70vw] w-[90vw] mx-auto bg-white dark:bg-neutral-950 font-sans md:px-10 md:mt-40 mt-10"
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto pt-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-5xl md:text-5xl font-light mb-2 text-black font-bitcount dark:text-white max-w-4xl">
+        <h2 className="text-4xl md:text-5xl font-light mb-2 text-black font-bitcount dark:text-white max-w-4xl ">
           A glimpse of my{" "}
           <span className="bg-gradient-to-r from-green-400 to-blue-400 text-transparent bg-clip-text">
             {" "}
@@ -57,7 +57,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-semibold text-neutral-500 dark:text-neutral-500 font-bitcount">
+              <h3 className="hidden md:block md:pl-20 md:text-5xl font-semibold text-neutral-500 dark:text-neutral-500 font-bitcount">
                 {item.title}
               </h3>
             </div>
