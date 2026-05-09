@@ -1,5 +1,8 @@
 import { Hero } from "./components/Hero";
 import { InfiniteMovingCards } from "./components/ui/infinite-moving-cards";
+import { SiGmail } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa6";
+
 // import { Timeline } from "./components/ui/timeline";
 
 import {
@@ -31,9 +34,19 @@ import { FaGolang } from "react-icons/fa6";
 import { Timeline } from "./components/ui/timeline";
 import { cn } from "./lib/utils";
 import { HeroParallax } from "./components/ui/hero-parallax";
+import { TextHoverEffect } from "./components/ui/text-hover-effect";
+import { toast } from "sonner";
 
-function TimelineContentHighlight({ text, className }: { text: string, className?: string | null}) {
-  return <span className={cn("font-[1000] text-green-400", className)}>{text}</span>;
+function TimelineContentHighlight({
+  text,
+  className,
+}: {
+  text: string;
+  className?: string | null;
+}) {
+  return (
+    <span className={cn("font-[1000] text-green-400", className)}>{text}</span>
+  );
 }
 
 const data = [
@@ -125,7 +138,10 @@ const data = [
           In between all the grind were{" "}
           <TimelineContentHighlight text={"trips & late-night memories"} /> that
           made IIT feel like home. <br />
-          Then comes a day, when we probably had the <TimelineContentHighlight text={"last conversation with some people"}/>
+          Then comes a day, when we probably had the{" "}
+          <TimelineContentHighlight
+            text={"last conversation with some people"}
+          />
         </p>
       </div>
     ),
@@ -138,10 +154,19 @@ const data = [
           The Real World
         </h4>
         <p className="text-lg text-muted-foreground font-thin">
-          Worked as <TimelineContentHighlight text="AI-ML Engineer at Writesonic"/> for ~6 months <br/>
-          Joined <TimelineContentHighlight text="IBM as Associate Engineer"/> but soon started feeling <TimelineContentHighlight text={"mechanical"} /> <br/><br/>
-          <TimelineContentHighlight text={"THE NEXT CHAPTER :"} className={"underline underline-offset-6"} /> Looking forward to working at fast-paced startups / business... 
-          <TimelineContentHighlight text= "Let's build real stuff, not just LLM wrappers or prompt engineering." />
+          Worked as{" "}
+          <TimelineContentHighlight text="AI-ML Engineer at Writesonic" /> for
+          ~6 months <br />
+          Joined <TimelineContentHighlight text="IBM as Associate Engineer" />{" "}
+          but soon started feeling{" "}
+          <TimelineContentHighlight text={"mechanical"} /> <br />
+          <br />
+          <TimelineContentHighlight
+            text={"THE NEXT CHAPTER :"}
+            className={"underline underline-offset-6"}
+          />{" "}
+          Looking forward to working at fast-paced startups / business...
+          <TimelineContentHighlight text="Let's build real stuff, not just LLM wrappers or prompt engineering." />
         </p>
       </div>
     ),
@@ -218,55 +243,98 @@ function App() {
         <Timeline data={data} />
       </section>
 
-      {/* <section className="w-screen h-screen dark"></section> */}
+      <HeroParallax
+        products={[
+          {
+            title: "Flux",
+            link: "https://github.com/vansh2308/website-builder-saas.git",
+            thumbnail:
+              "https://github.com/vansh2308/Flux/raw/master/public/flux-render.png",
+          },
+          {
+            title: "COSMOS",
+            link: "https://github.com/vansh2308/cosmos.git",
+            thumbnail:
+              "https://github.com/vansh2308/cosmos/raw/master/static/hero-cosmos.png",
+          },
+          {
+            title: "OdourGNN",
+            link: "https://github.com/vansh2308/Odour-GNN.git",
+            thumbnail:
+              "https://github.com/vansh2308/Odour-GNN/raw/master/figures/readme-hero.png",
+          },
+          {
+            title: "SmartSchedule",
+            link: "https://github.com/vansh2308/genetic-class-scheduler.git",
+            thumbnail:
+              "https://github.com/vansh2308/genetic-class-scheduler/blob/master/static/thumbnail.png?raw=true",
+          },
+          {
+            title: "COSMOS",
+            link: "https://github.com/vansh2308/cosmos.git",
+            thumbnail:
+              "https://github.com/vansh2308/cosmos/raw/master/static/hero-cosmos.png",
+          },
+          {
+            title: "Flux",
+            link: "https://github.com/vansh2308/website-builder-saas.git",
+            thumbnail:
+              "https://github.com/vansh2308/Flux/raw/master/public/flux-render.png",
+          },
+          {
+            title: "SmartSchedule",
+            link: "https://github.com/vansh2308/genetic-class-scheduler.git",
+            thumbnail:
+              "https://github.com/vansh2308/genetic-class-scheduler/blob/master/static/thumbnail.png?raw=true",
+          },
+          {
+            title: "OdourGNN",
+            link: "https://github.com/vansh2308/Odour-GNN.git",
+            thumbnail:
+              "https://github.com/vansh2308/Odour-GNN/raw/master/figures/readme-hero.png",
+            thumbnailClassname: "mix-blend-multiply",
+          },
+        ]}
+      />
 
-      <HeroParallax products={[
-        {
-          title: 'Flux',
-          link: 'https://github.com/vansh2308/website-builder-saas.git',
-          thumbnail: "https://github.com/vansh2308/Flux/raw/master/public/flux-render.png"
-        }, 
-        {
-          title: 'COSMOS',
-          link: 'https://github.com/vansh2308/cosmos.git',
-          thumbnail: "https://github.com/vansh2308/cosmos/raw/master/static/hero-cosmos.png"
-        }, 
-        {
-          title: 'OdourGNN',
-          link: 'https://github.com/vansh2308/Odour-GNN.git',
-          thumbnail: "https://github.com/vansh2308/Odour-GNN/raw/master/figures/readme-hero.png"
-        }, 
-        {
-          title: 'SmartSchedule',
-          link: 'https://github.com/vansh2308/genetic-class-scheduler.git',
-          thumbnail: "https://github.com/vansh2308/genetic-class-scheduler/blob/master/static/thumbnail.png?raw=true"
-        }, 
-        {
-          title: 'COSMOS',
-          link: 'https://github.com/vansh2308/cosmos.git',
-          thumbnail: "https://github.com/vansh2308/cosmos/raw/master/static/hero-cosmos.png"
-        }, 
-        {
-          title: 'Flux',
-          link: 'https://github.com/vansh2308/website-builder-saas.git',
-          thumbnail: "https://github.com/vansh2308/Flux/raw/master/public/flux-render.png"
-        }, 
-        {
-          title: 'SmartSchedule',
-          link: 'https://github.com/vansh2308/genetic-class-scheduler.git',
-          thumbnail: "https://github.com/vansh2308/genetic-class-scheduler/blob/master/static/thumbnail.png?raw=true"
-        }, 
-        {
-          title: 'OdourGNN',
-          link: 'https://github.com/vansh2308/Odour-GNN.git',
-          thumbnail: "https://github.com/vansh2308/Odour-GNN/raw/master/figures/readme-hero.png",
-          thumbnailClassname: 'mix-blend-multiply'
-        }, 
+      <section className="w-[80vw] mx-auto h-screen dark relative flex flex-col items-center text-center pt-40">
+        <h2 className="text-5xl md:text-5xl font-light mb-2 text-black font-bitcount dark:text-white max-w-4xl">
+          Looking forward to
+          <span className="bg-gradient-to-r from-green-400 to-blue-400 text-transparent bg-clip-text">
+            {" "}
+            high-impact{" "}
+          </span>
+          projects. Let's build some real stuff,
+          <span className="bg-gradient-to-r from-green-400 to-blue-400 text-transparent bg-clip-text">
+            {" "}
+            Connect{" "}
+          </span>
+          with me on
+        </h2>
 
-        
-        
-        
-      ]}/>
+        <div className="flex justify-between gap-10 mt-10 text-4xl z-20">
+          <a
+            onClick={() => {
+              navigator.clipboard.writeText('vanshagarwal11@gmail.com')
+              toast("Email copied!")
+            }}
+            className="cursor-pointer"
+          >
+            <SiGmail className="hover:text-green-400" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/vanshag2308/"
+            className="cursor-pointer"
+          >
+            <FaLinkedin className="hover:text-green-400" />
+          </a>
+          <a href="https://github.com/vansh2308" className="cursor-pointer">
+            <FaGithub className="hover:text-green-400" />
+          </a>
+        </div>
+
+        <TextHoverEffect text="VANSH" />
+      </section>
     </>
   );
 }
